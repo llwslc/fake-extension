@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "FAKE",
+  "version": "0.1.0",
+  "description": "FAKE EXCHANGE BALANCE",
+  "author": "llwslc <llwslc@gmail.com>",
+  "permissions": ["storage", "clipboardWrite", "activeTab"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' 'sha256-askSPy3rDeM+aSvMSWKNbaUq6foI7Sbc9O5T3H8p8aY='; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": ["https://ftx.com/wallet"],
+      "js": ["js/contentScript.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": ["js/*.js"],
+  "icons": {
+    "128": "logo.png"
+  }
+}
